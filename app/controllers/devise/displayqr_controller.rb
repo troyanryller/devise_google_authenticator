@@ -9,7 +9,10 @@ class Devise::DisplayqrController < DeviseController
       sign_in resource_class.new, resource
       redirect_to stored_location_for(scope) || :root
     else
-      resource.send(:assign_auth_secret) if resource.gauth_secret.nil?
+      if !resource.gauth_enabled? || resource.gauth_secret.nil?
+        resource.send(:assign_auth_secret)
+        resource.save(validate: false)
+      end
       @tmpid = resource.assign_tmp
       render :show
     end
