@@ -2,9 +2,9 @@ $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = "devise_google_authenticator"
-  s.version = "0.3.18"
+  s.version = "0.3.19"
   s.authors = ["Christian Frichot"]
-  s.date = "2015-02-08"
+  s.date = "2016-08-12"
   s.description = "Devise Google Authenticator Extension, for adding Google's OTP to your Rails apps!"
   s.email = "xntrik@gmail.com"
   s.extra_rdoc_files = [
@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
   {
     # 'railties' => '~> 3.0',
     # removed the following to try and get past this bundle update not finding compatible versions for gem issue
-    # 'actionmailer' => '>= 3.0', 
+    # 'actionmailer' => '>= 3.0',
     #'actionmailer' => '~> 3.2',# '>= 3.2.12',
-    'devise'  => '~> 3.2',
+    'devise'  => '~> 4.1.0',
     'rotp'    => '~> 1.6',
     'rqrcode' => '~> 0.10.1'
   }.each do |lib, version|
