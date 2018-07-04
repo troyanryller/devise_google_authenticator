@@ -26,6 +26,12 @@ end
 module DeviseGoogleAuthenticator
   autoload :Schema, 'devise_google_authenticatable/schema'
   autoload :Patches, 'devise_google_authenticatable/patches'
+
+  class << self
+    def rails5?
+      Gem.loaded_specs['activesupport'].version >= Gem::Version.new('5.0.0.beta')
+    end
+  end
 end
 
 require 'devise_google_authenticatable/routes'
