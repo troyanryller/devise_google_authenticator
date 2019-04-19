@@ -28,11 +28,11 @@ class Devise::DisplayqrController < DeviseController
       sign_in scope, resource, bypass: true
       redirect_to stored_location_for(scope) || :root
     else
-      redirect_to action: :show
+      render :show
     end
   rescue InvalidToken
     set_flash_message(:error, :invalid_token)
-    redirect_to action: :show
+    render :show
   end
 
   def refresh
